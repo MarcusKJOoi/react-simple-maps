@@ -12,6 +12,7 @@ const Line = ({
   strokeWidth = 3,
   fill = "transparent",
   className = "",
+  buildPath = "",
   ...restProps
 }) => {
   const { path } = useContext(MapContext)
@@ -23,7 +24,7 @@ const Line = ({
 
   return (
     <path
-      d={path(lineData)}
+      d={path(lineData) + " " + buildPath}
       className={`rsm-line ${className}`}
       stroke={stroke}
       strokeWidth={strokeWidth}
